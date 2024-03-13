@@ -1,90 +1,27 @@
 # Pregunta 1
-### Crear un vector con la sucesión de números del -10 al 27
-Harry <- seq(-10, 27) # nolint: object_name_linter.
-### Le pedimos la posición 7 del vector
-cat("El valor del vector en la posicion 7 es: ", Harry[7], "\n") 
+print('Pregunta 1')
+curve(x^2-3*x+30, -15, 15, main = "Una parabola",xlab =expression(x), ylab =expression(y = x^2-3*x+30))
 
-# Pregunta 2
-### Definir la función para calcular el valor de la sucesión
-funcion_sucesion <- function(n) {
-  100 * 2^n - 7 * 3^n
-}
-
-### Calcular la sucesión para n = 0, ..., 200
-valores_sucesion <- sapply(0:200, funcion_sucesion)
-
-### Encontrar el índice del máximo valor
-indice_maximo <- which.max(valores_sucesion)
-
-### Mostrar el valor máximo
-valor_maximo <- valores_sucesion[indice_maximo]
-
-### Mostrar el resultado
-cat("El máximo de la sucesión se alcanza en n = ", indice_maximo, "\n")
-cat("El valor máximo es: ", valor_maximo, "\n")
+#Pregunta 2
+print('Pregunta 2')
+f =function(x){ x^2-3*x+30}
+I =c(-15:15)
+plot(I,f(I), type = "l",  main = "Una parabola",xlab =expression(x), ylab =expression(y = x^2-3*x+30))
 
 # Pregunta 3
-### Crear un vector con la sucesión de números del 0 al 40
-numeros <- seq(0, 40)
-
-### Definir la función para calcular el valor de la sucesión
-funcion_sucesion <- function(n) {
-  3 * 5^n - 1
-}
-
-### Calcular la sucesión para n = 0, ..., 40
-x <- sapply(numeros, funcion_sucesion)
-### Seleccionar los elementos de x que son mayores a 3.5
-x_mayores_3_5 <- x[x > 3.5]
-### Mostrar el subvector
-print(x_mayores_3_5)
+print('Pregunta 3')
+curve(5*2^x, -10, 25, log = "y", ylab =expression(y = 5%.%2^x), xlab = "")
 
 # Pregunta 4
-numero_complejo <- function(z) {
-### Extraer parte real e imaginaria
-re <- Re(z)
-im <- Im(z)
-  
-### Calcular módulo y argumento
-modulo <- round(Mod(z), 2)
-argumento <- round(Arg(z), 2)
-  
-### Calcular conjugado
-conjugado <- complex(real = re, imaginary = -im)
-  
-### Crear vector con los resultados
-resultado <- c(re, im, modulo, argumento, conjugado)
-names(resultado) <- c("Parte real", "Parte imaginaria", "Módulo", "Argumento", "Conjugado")
-  
-return(resultado)
-}
+print('Pregunta 4')
+curve(3*x, -10, 20, xlab = "", ylab = "",col = "blue", main = "2 rectas", sub = "Dos rectas con pendiente opuesto")
+curve(-3*x, col = "green", add = TRUE)
+legend(13, 10, legend =c("3x","-3x"), lty =c(1, 1), col =c("blue", "green"))
 
-print(numero_complejo(3+4i))
+#Pregunta 5
+print('Pregunta 5')
+abline(h = 0, col = "red", lwd = 5)
 
-# Pregunta 5
-
-resolver_ecuacion_2grado <- function(A, B, C) {
-### Calculamos el discriminante
-discriminante <- B^2 - 4 * A * C
-  
-### Verificamos si tiene soluciones reales
-if (discriminante < 0) {
-  mensaje <- "La ecuación no tiene soluciones reales"
-  soluciones <- NA
-} else {
-### Calculamos las soluciones
-  x1 <- (-B + sqrt(discriminante)) / (2 * A)
-  x2 <- (-B - sqrt(discriminante)) / (2 * A)
-  soluciones <- c(x1, x2)
-  mensaje <- "Las soluciones son:"
-}
-  
-### Creamos un vector con los resultados
-resultado <- c(mensaje, soluciones)
-names(resultado) <- c("Mensaje", "Solución 1", "Solución 2")
-  
-  return(resultado)
-}
-
-print(resolver_ecuacion_2grado(1, -5, 6))
-
+# Pregunta 6
+print('Pregunta 6')
+abline(7, 2, col = "blue", lwd = 2)
